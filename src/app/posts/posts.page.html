@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Posts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input [(ngModel)]="post.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Body</ion-label>
+      <ion-textarea rows="5" [(ngModel)]="post.body"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-padding">
+    <ion-button (click)="submit()">Submit New Post</ion-button>
+  </div>
+
+  <ion-list>
+    <ion-item *ngIf="listPosts.length == 0">
+      No data available
+    </ion-item>
+    <ion-item *ngFor="let item of listPosts" routerLink="/detail/{{ item.id }}">
+      <ion-label>
+        <h4>{{ item.title }}</h4>
+        <p>Post id: {{ item.id }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Camera</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <img [src]="myImage || 'assets/shapes.svg'" width="100%">
+
+  <ion-button expand="block" (click)="takePicture()">Take Picture</ion-button>
+
+</ion-content>
+
