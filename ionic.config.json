@@ -1,0 +1,7 @@
+{
+  "name": "mySecondPWA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
